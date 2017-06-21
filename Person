@@ -1,0 +1,29 @@
+package properties_java;
+
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+public class Person {
+
+    //This is an abstract class,which instantiate string,you can read and write to
+    //Property sayesinde addListener eklenebilir,binding yapılabilir
+    //3 paremetre alır, birincisi bu class,ikincisi firstName,ücüncüsü defaultValue
+
+    private StringProperty firstName=new SimpleStringProperty(this,"firstName","");
+
+    //Returns the firstName value(ie. Bucky)
+    public String getFirstName() {
+        return firstName.get();
+    }
+
+    //Returns the String Property object
+    public StringProperty firstNameProperty() {
+        return firstName;
+    }
+
+    //Set the firstName value
+    public void setFirstName(String firstName) {
+        this.firstName.set(firstName);
+    }
+}
